@@ -27,7 +27,7 @@
         <form name="filterForm" id="filterForm" class="layui-form" style="display: inline-block" onkeydown="if(event.keyCode===13){return false;}">
           <div class="layui-form-item" style="margin-bottom: 0">
             <div class="layui-inline">
-              <input name="username" id="username" type="text" placeholder="请输入教工号/姓名" autocomplete="off" class="layui-input" style="width: 150px;display: inline-block">
+              <input name="username" id="username" type="text" placeholder="请输入学工号/姓名" autocomplete="off" class="layui-input" style="width: 150px;display: inline-block">
             </div>
             <div class="layui-inline">
               <button name="searchBtn" id="searchBtn" type="button" class="layui-btn"><i class="layui-icon">&#xe615;</i></button>
@@ -53,13 +53,35 @@
             <th>操作</th>
         </thead>
         <tbody>
-          <tr>
+          <tr class="item">
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
-            <td id="number">24320172202899</td>
-            <td id="name">小明</td>
-            <td id="email">123432642@qq.com</td>
+            <td class="number">24320172202899</td>
+            <td class="name">小明</td>
+            <td class="email">123432642@qq.com</td>
+            <!--<td class="td-status">
+              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>-->
+            <td class="td-manage">
+
+              <a title="编辑"  onclick="x_admin_show('编辑','admin-edit-student.html','460','350')" href="javascript:;" style="margin-right:5px;font-size:25px;">
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+              <a title="重置密码" onclick="member_renew(this,'要重置的id')" href="javascript:;"  style="margin-right:5px;font-size:15px;">
+                <i class="iconfont" style="font-size:13px;">&#xe6aa;</i>
+              </a>
+              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;"  style="margin-right:5px;font-size:25px;">
+                <i class="layui-icon" >&#xe640;</i>
+              </a>
+            </td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <td class="number">24320172202898</td>
+            <td class="name">小张</td>
+            <td class="email">123432642@qq.com</td>
             <!--<td class="td-status">
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>-->
             <td class="td-manage">
@@ -90,6 +112,15 @@
 
     </div>
     <script>
+        $(function () {
+            $("#searchBtn").bind("click",function () {
+                //alert($("#username").val())
+                $(".item").hide()
+                $("td:contains("+$("#username").val()+")").parents('.item').fadeIn()
+            })
+
+        });
+
       layui.use('laydate', function(){
         var laydate = layui.laydate;
         
@@ -148,7 +179,6 @@
               layer.msg('已删除!',{icon:1,time:1000});
           });
       }
-
 
 
       function delAll (argument) {
