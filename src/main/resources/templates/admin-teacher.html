@@ -40,8 +40,8 @@
     </a>
     -->
     <button id="addUserBtn" onclick="x_admin_show('添加用户','./admin-add-teacher.html',500,400)" name="addUserBtn" class="layui-btn" style="float: right;margin-right:20px;margin-top:5px;"><i class="layui-icon">&#xe608;</i>新建账号</button>
-  </xblock>
-  <table class="layui-table">
+  </xblock >
+  <table class="layui-table" >
     <thead>
     <tr>
       <th>
@@ -53,14 +53,36 @@
       <!-- <th>状态</th>-->
       <th>操作</th>
     </thead>
-    <tbody>
-    <tr>
+    <tbody >
+    <tr class="item">
       <td>
         <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
       </td>
-      <td id="number">2017004023</td>
-      <td id="name">邱老师</td>
-      <td id="email">123432642@qq.com</td>
+      <td class="number">2017004023</td>
+      <td class="name">邱老师</td>
+      <td class="email">123432642@qq.com</td>
+      <!--<td class="td-status">
+        <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>-->
+      <td class="td-manage">
+
+        <a title="编辑"  onclick="x_admin_show('编辑','admin-edit-student.html','460','350')" href="javascript:;" style="margin-right:5px;font-size:25px;">
+          <i class="layui-icon">&#xe642;</i>
+        </a>
+        <a title="重置密码" onclick="member_renew(this,'要重置的id')" href="javascript:;"  style="margin-right:5px;font-size:15px;">
+          <i class="iconfont" style="font-size:13px;">&#xe6aa;</i>
+        </a>
+        <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;"  style="margin-right:5px;font-size:25px;">
+          <i class="layui-icon" >&#xe640;</i>
+        </a>
+      </td>
+    </tr>
+    <tr class="item">
+      <td>
+        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+      </td>
+      <td class="number">2017004022</td>
+      <td class="name">张老师</td>
+      <td class="email">123432642@qq.com</td>
       <!--<td class="td-status">
         <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>-->
       <td class="td-manage">
@@ -91,6 +113,17 @@
 
 </div>
 <script>
+  //搜索教师
+  $(function () {
+      $("#searchBtn").bind("click",function () {
+         //alert($("#username").val())
+          $(".item").hide()
+            $("td:contains("+$("#username").val()+")").parents('.item').fadeIn()
+      })
+
+  });
+
+
     layui.use('laydate', function(){
         var laydate = layui.laydate;
 
@@ -116,6 +149,7 @@
 
         });
     }
+
 
     /*用户-停用*/
     function member_stop(obj,id){
