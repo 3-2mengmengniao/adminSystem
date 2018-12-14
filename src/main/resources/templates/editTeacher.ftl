@@ -25,19 +25,19 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label for="username" class="layui-form-label">
-                <span class="x-red">*</span>登录名
+                <span class="x-red">*</span>教工号
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="username" name="username" required="" lay-verify="required"
+                <input type="text" id="username" name="username" required="" lay-verify="required|number"
                        autocomplete="off" value="admin" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label for="phone" class="layui-form-label">
-                <span class="x-red">*</span>手机
+                <span class="x-red">*</span>姓名
             </label>
             <div class="layui-input-inline">
-                <input type="text" value="18925139194" id="phone" name="phone" required="" lay-verify="phone"
+                <input type="text" value="18925139194" id="phone" name="phone" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -47,6 +47,15 @@
             </label>
             <div class="layui-input-inline">
                 <input type="text" value="113664000@qq.com" id="L_email" name="email" required="" lay-verify="email"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="phone" class="layui-form-label">
+                <span class="x-red">*</span>初始密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="password" value="18925139194" id="phone" name="phone" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>

@@ -28,7 +28,7 @@
                 <span class="x-red">*</span>教师姓名
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="L_username" name="username" required="" lay-verify="nikename"
+                <input type="text" id="L_username" name="username" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <span class="x-red">*</span>教工号
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="L_usernumber" name="username" required="" lay-verify="nikename"
+                <input type="text" id="L_usernumber" name="username" required="" lay-verify="required|number"
                        autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -58,7 +58,7 @@
                 <span class="x-red">*</span>初始密码
             </label>
             <div class="layui-input-inline">
-                <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                <input type="password" id="L_pass" name="pass" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>

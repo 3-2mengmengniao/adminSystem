@@ -64,7 +64,7 @@
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>-->
             <td class="td-manage">
 
-              <a title="编辑"  onclick="x_admin_show('编辑','/editStudent','460','350')" href="javascript:;" style="margin-right:5px;font-size:25px;">
+              <a title="编辑"  onclick="x_admin_show('编辑','/editStudent','460','450')" href="javascript:;" style="margin-right:5px;font-size:25px;">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="重置密码" onclick="member_renew(this,'要重置的id')" href="javascript:;"  style="margin-right:5px;font-size:15px;">
@@ -86,7 +86,7 @@
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>-->
             <td class="td-manage">
 
-              <a title="编辑"  onclick="x_admin_show('编辑','/editStudent','460','350')" href="javascript:;" style="margin-right:5px;font-size:25px;">
+              <a title="编辑"  onclick="x_admin_show('编辑','/editStudent','460','450')" href="javascript:;" style="margin-right:5px;font-size:25px;">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="重置密码" onclick="member_renew(this,'要重置的id')" href="javascript:;"  style="margin-right:5px;font-size:15px;">
