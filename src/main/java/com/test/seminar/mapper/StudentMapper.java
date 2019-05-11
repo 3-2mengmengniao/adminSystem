@@ -31,21 +31,6 @@ public interface StudentMapper {
      */
     Student getStudentByAccount(String account);
 
-    /**通过小组id获取组内学生
-     *
-     * @param teamId team id
-     * @return List<Student>
-     */
-    List<Student> getStudentByTeamId(@Param("teamId")BigInteger teamId);
-
-    /**
-     * 通过班级id获取班内学生
-     *
-     * @param courseClassId course class id
-     * @return List<Student>
-     */
-    List<Student> getStudentByCourseClassId(@Param("courseClassId")BigInteger courseClassId);
-
     /**
      * 获取所有学生
      *
@@ -73,20 +58,4 @@ public interface StudentMapper {
      * @param studentId student id
      */
     void deleteStudentByStudentId(@Param("studentId") BigInteger studentId);
-
-    /**
-     * 获取课程中的未组队学生
-     * @param courseId course id
-     * @return List<Student>
-     */
-    List<Student> getStudentNotInTeamByCourseId(@Param("courseId")BigInteger courseId);
-
-    /**
-     * 通过从课程id获取未组队学生
-     *
-     * @param courseId course id
-     * @param mainCourseId main course id
-     * @return List<Student>
-     */
-    List<Student> getStudentNotInTeamByCourseIdForSubCourse(@Param("courseId")BigInteger courseId,@Param("mainCourseId")BigInteger mainCourseId);
 }

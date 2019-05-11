@@ -29,20 +29,6 @@ public interface StudentDao {
      * @return Student
      */
     Student getStudentByAccount(String account);
-    /**
-     * 通过小组id获取组内学生
-     *
-     * @param teamId team id
-     * @return List<Student>
-     */
-    List<Student> getStudentByTeamId(BigInteger teamId);
-
-    /**
-     * 通过班级id获取班内学生
-     * @param courseClassId course class id
-     * @return List<Student>
-     */
-    List<Student> getStudentByCourseClassId(BigInteger courseClassId);
 
     /**
      * 获取所有学生
@@ -74,11 +60,4 @@ public interface StudentDao {
      * @throws UserNotFoundException user not found
      */
     void deleteStudentByStudentId(BigInteger studentId)throws UserNotFoundException;
-
-    /**
-     * 获取课程中未组队学生
-     * @param courseId course id
-     * @return List<Student>
-     */
-    List<Student> getStudentNotInTeamByCourseId(BigInteger courseId);
 }

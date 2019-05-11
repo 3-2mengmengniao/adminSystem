@@ -23,11 +23,13 @@ public class Student{
     private Integer active;
     private String studentName;
     private String email;
-    private List<Course> courseList;
-
 
     public BigInteger getId() {
         return id;
+    }
+
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 
     public String getAccount() {
@@ -46,11 +48,11 @@ public class Student{
         this.password = password;
     }
 
-    public int getActive() {
+    public Integer getActive() {
         return active;
     }
 
-    public void setActive(int active) {
+    public void setActive(Integer active) {
         this.active = active;
     }
 
@@ -68,22 +70,5 @@ public class Student{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<Course> getCourseList() { return courseList; }
-
-    public void setCourseList(List<Course> courseList) { this.courseList = courseList; }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {return true;}
-        if (o == null || getClass() != o.getClass()) {return false;}
-        Student student = (Student) o;
-        return getId().equals(student.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
     }
 }

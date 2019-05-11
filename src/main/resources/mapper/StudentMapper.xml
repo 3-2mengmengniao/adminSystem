@@ -5,7 +5,6 @@
     <resultMap id="studentResultMap" type="com.test.seminar.entity.Student">
         <id property="id" column="id" />
         <result property="active" column="is_active"/>
-        <collection property="courseList" javaType="ArrayList" column="id" ofType="com.test.seminar.entity.Course" select="com.test.seminar.mapper.CourseMapper.getCourseByStudentId"/>
     </resultMap>
 
 
@@ -19,18 +18,6 @@
         SELECT id,account,password,is_active,student_name,email
         FROM student
         WHERE account=#{account}
-    </select>
-
-    <select id="getStudentByTeamId" resultMap="studentResultMap">
-        SELECT id,account,password,is_active,student_name,email
-        FROM student,team_student
-        WHERE team_student.team_id=#{teamId} and team_student.student_id=student.id
-    </select>
-
-    <select id="getStudentByCourseClassId" resultMap="studentResultMap">
-        SELECT id,account,password,is_active,student_name,email
-        FROM student,klass_student
-        WHERE klass_student.klass_id=#{courseClassId} and klass_student.student_id=student.id
     </select>
 
     <insert id="insertStudent">
@@ -69,35 +56,4 @@
         FROM student
     </select>
 
-    <select id="getStudentNotInTeamByCourseId" resultMap="studentResultMap">
-        select id,account,password,is_active,student_name,email
-        from student,
-             klass_student
-        where klass_student.course_id = #{courseId}
-          and id = klass_student.student_id
-          and id not in
-              (select team_student.student_id
-               from team_student,
-                    klass_student,
-                    klass_team
-               where klass_student.course_id = #{courseId}
-                 and klass_team.klass_id = klass_student.klass_id
-                 and team_student.team_id = klass_team.team_id)
-    </select>
-
-    <select id="getStudentNotInTeamByCourseIdForSubCourse" resultMap="studentResultMap">
-        select id,account,password,is_active,student_name,email
-        from student,
-             klass_student
-        where klass_student.course_id = #{courseId}
-          and id = klass_student.student_id
-          and id not in
-              (select team_student.student_id
-               from team_student,
-                    klass_student,
-                    klass_team
-               where klass_student.course_id = #{mainCourseId}
-                 and klass_team.klass_id = klass_student.klass_id
-                 and team_student.team_id = klass_team.team_id)
-    </select>
 </mapper>

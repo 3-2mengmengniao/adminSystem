@@ -1,6 +1,6 @@
 package com.test.seminar.config;
 
-import com.test.seminar.service.UserService;
+;
 import com.test.seminar.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

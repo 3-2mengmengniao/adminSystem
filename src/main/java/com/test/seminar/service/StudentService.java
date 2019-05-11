@@ -1,7 +1,6 @@
 package com.test.seminar.service;
 
 import com.github.pagehelper.PageInfo;
-import com.test.seminar.entity.Course;
 import com.test.seminar.entity.Student;
 import com.test.seminar.exception.RepetitiveRecordException;
 import com.test.seminar.exception.UserNotFoundException;
